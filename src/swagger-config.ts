@@ -9,10 +9,6 @@ const options = {
     },
     tags: [
       {
-        name: "User Management",
-        description: "User related operations",
-      },
-      {
         name: "Notes Management",
         description: "Notes related operations",
       },

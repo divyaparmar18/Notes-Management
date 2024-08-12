@@ -1,5 +1,4 @@
 import * as express from "express";
-import { validateToken } from "../middleware/auth";
 import {
   handleCreateNote,
   handleFetchNoteById,
@@ -42,7 +41,7 @@ const notesRouter = express.Router();
  *       '500':
  *         description: Internal server error
  */
-notesRouter.post("/notes", validateToken, handleCreateNote);
+notesRouter.post("/notes", handleCreateNote);
 
 /**
  * @swagger
@@ -86,7 +85,7 @@ notesRouter.post("/notes", validateToken, handleCreateNote);
  *       '500':
  *         description: Internal server error
  */
-notesRouter.put("/notes/:id", validateToken, handleUpdateNote);
+notesRouter.put("/notes/:id", handleUpdateNote);
 
 /**
  * @swagger
@@ -117,7 +116,7 @@ notesRouter.put("/notes/:id", validateToken, handleUpdateNote);
  *       '500':
  *         description: Internal server error
  */
-notesRouter.get("/notes/:id", validateToken, handleFetchNoteById);
+notesRouter.get("/notes/:id", handleFetchNoteById);
 
 /**
  * @swagger
@@ -168,6 +167,6 @@ notesRouter.get("/notes/:id", validateToken, handleFetchNoteById);
  *       '500':
  *         description: Internal server error
  */
-notesRouter.get("/notes", validateToken, handleQueryNotesByTitle);
+notesRouter.get("/notes", handleQueryNotesByTitle);
 
 export default notesRouter;

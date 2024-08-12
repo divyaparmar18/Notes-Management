@@ -6,7 +6,6 @@ import {
   UpdateDateColumn,
   ManyToOne,
 } from "typeorm";
-import { User } from "./user.model";
 import { IsString } from "class-validator";
 
 @Entity()
@@ -27,7 +26,4 @@ export class Note {
 
   @UpdateDateColumn()
   updated_at!: Date;
-
-  @ManyToOne(() => User, (user) => user.notes)
-  user!: User;
 }
