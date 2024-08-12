@@ -21,8 +21,6 @@ export const createNote = async (noteInput: NoteInput): Promise<IResponse> => {
     const createdNote = notesRepo.create({
       title,
       body,
-      created_at: new Date(),
-      updated_at: new Date(),
     });
     const savedNote = await notesRepo.save(createdNote);
     return {
